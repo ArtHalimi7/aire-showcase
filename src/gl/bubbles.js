@@ -33,28 +33,28 @@ const NOTES = [
   { off: [-0.88, -0.6, 0.55], core: '#ead5bd' }, // cashmere wood
 ];
 
-export function createBubbles(rig, U, labelEls) {
+export function createBubbles(rig, U, labelEls) { // rig: a group in world space; bubbles drift around the bottle
   const geo = new THREE.SphereGeometry(1, 48, 32);
   const r = rng(21);
   const mk = (seed, order) => {
     const m = new THREE.Mesh(geo, new THREE.ShaderMaterial({ uniforms: { uTime: U.uTime, uAlpha: { value: 1 }, uFade: { value: 1 }, uSeed: { value: seed } }, vertexShader: VERT, fragmentShader: FRAG, transparent: true, depthWrite: false }));
-    m.renderOrder = order; rig.add(m); return m;
+    m.renderOrder = order; m.layers.set(1); rig.add(m); return m;
   };
   const ambient = Array.from({ length: 16 }, () => ({
     kind: 'ambient', mesh: mk(r() * 10, 5), life: 1, push: new THREE.Vector3(),
-    base: new THREE.Vector3((r() - 0.5) * 6.6, -2.3 + r() * 4.6, -2.2 + r() * 3.6),
+    base: new THREE.Vector3((r() - 0.5) * 5.6, -2.3 + r() * 4.6, -2.6 + r() * 3.4),
     rad: 0.05 + Math.pow(r(), 1.6) * 0.14, speed: 0.05 + r() * 0.08, phase: r() * 6.28,
   }));
   const notes = NOTES.map((n, i) => {
     const core = new THREE.Mesh(new THREE.IcosahedronGeometry(0.085, 5), new THREE.MeshPhysicalMaterial({ color: n.core, roughness: 0.4, sheen: 1, sheenColor: new THREE.Color('#ffffff'), sheenRoughness: 0.5, clearcoat: 0.5 }));
-    rig.add(core);
+    core.layers.set(1); rig.add(core);
     return { kind: 'note', i, mesh: mk(i * 3.1, 6), core, life: 1, push: new THREE.Vector3(), off: new THREE.Vector3(...n.off), rad: 0.3, phase: i * 2.1, s: 0 };
   });
   const all = [...ambient, ...notes];
 
   const v = new THREE.Vector3(), ndc = new THREE.Vector3(), right = new THREE.Vector3(), up = new THREE.Vector3(), tgt = new THREE.Vector3(), cam = new THREE.Vector3();
   const sphere = new THREE.Sphere();
-  const world = (b) => v.copy(b.mesh.position).add(rig.position);
+  const world = (b) => v.copy(b.mesh.position);
 
   function repel(b, mouse, camera, dt) {
     ndc.copy(world(b)).project(camera);
@@ -69,7 +69,7 @@ export function createBubbles(rig, U, labelEls) {
     camera.getWorldPosition(cam);
     for (const b of ambient) {
       b.base.y += b.speed * dt; if (b.base.y > 2.4) b.base.y = -2.4;
-      b.mesh.position.set(b.base.x + Math.sin(t * 0.5 + b.phase) * 0.14, b.base.y, b.base.z).add(b.push);
+      b.mesh.position.set(b.base.x + Math.sin(t * 0.5 + b.phase) * 0.14, b.base.y, b.base.z).add(b.push).add(bottle.position);
       b.mesh.scale.setScalar(b.rad * b.life);
       b.mesh.material.uniforms.uFade.value = THREE.MathUtils.smoothstep(world(b).distanceTo(cam), 0.9, 2.2);
       repel(b, mouse, camera, dt);

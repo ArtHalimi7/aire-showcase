@@ -13,64 +13,66 @@
 </head>
 <body>
   <canvas class="gl" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
   <div class="veil" aria-hidden="true"></div>
 
   <header class="nav">
     <a class="brand" href="#top" data-scroll="0">AIRE</a>
     <nav class="links">
+      <a href="#liquid" data-scroll="#liquid">The perfume</a>
       <a href="#notes" data-scroll="#notes">Notes</a>
-      <a href="#craft" data-scroll="#craft">Craft</a>
       <a class="pill" href="#own" data-scroll="#own">Pre-order</a>
     </nav>
   </header>
+
+  <div class="clock" aria-hidden="true"><span class="clock-time">06:12</span><span class="clock-name">Dawn over the clouds</span></div>
 
   <main id="story">
     <section class="ch hero" id="top" style="--h: 100vh">
       <div class="stage">
         <h1 class="sr-only">AIRE Cumulus Nº 01, eau de parfum</h1>
-        <p class="hero-meta">Cumulus Nº 01<br /><span>Eau de parfum, 50 ml</span></p>
         <p class="hero-line">A fragrance that<br />weighs nothing.</p>
         <p class="cue"><span>Scroll to rise</span><i></i></p>
+        <p class="hint">Drag the bottle</p>
       </div>
     </section>
 
-    <section class="ch rise" style="--h: 260vh">
+    <section class="ch rise" style="--h: 230vh">
       <div class="stage">
-        <p class="big top-left"><span class="ln"><span>Above the weather,</span></span></p>
-        <p class="big bottom-right"><span class="ln"><span>the air goes quiet.</span></span></p>
+        <p class="big top-left"><span class="ln"><span>Some mornings start</span></span></p>
+        <p class="big bottom-right"><span class="ln"><span>above the clouds.</span></span></p>
       </div>
     </section>
 
-    <section class="ch idea" style="--h: 170vh">
+    <section class="ch liquid" id="liquid" style="--h: 270vh">
       <div class="stage">
         <div class="col-left">
-          <p class="big"><span class="ln"><span>We spent 312 days</span></span><span class="ln"><span>trying to bottle it.</span></span></p>
-          <p class="body"><span class="ln"><span>Forty-one drafts later, Cumulus smells like the first</span></span><span class="ln"><span>breath after a long climb. Cold, clean, faintly sweet.</span></span></p>
+          <p class="giant"><span class="ln"><span>312</span></span></p>
+          <p class="big small-big"><span class="ln"><span>days to get the light</span></span><span class="ln"><span>inside a bottle.</span></span></p>
+          <p class="body"><span class="ln"><span>Bergamot pressed in January. Iris rested for three winters.</span></span><span class="ln"><span>Blended in Grasse, then left alone until it was ready.</span></span></p>
         </div>
       </div>
     </section>
 
-    <section class="ch notes" id="notes" style="--h: 240vh">
+    <section class="ch notes" id="notes" style="--h: 250vh">
       <div class="stage">
         <p class="big bottom-center"><span class="ln"><span>Three notes. No weight.</span></span></p>
       </div>
     </section>
 
-    <section class="ch craft" id="craft" style="--h: 170vh">
+    <section class="ch craft" id="craft" style="--h: 220vh">
       <div class="stage">
         <div class="col-right">
-          <p class="big"><span class="ln"><span>Made slowly.</span></span></p>
+          <p class="big"><span class="ln"><span>Made to be kept.</span></span></p>
           <dl class="stats">
-            <div><dt><span class="ln"><span>4 mm</span></span></dt><dd><span class="ln"><span>Recycled glass walls, polished by hand</span></span></dd></div>
-            <div><dt><span class="ln"><span>Refill</span></span></dt><dd><span class="ln"><span>The bottle is made to be kept for life</span></span></dd></div>
-            <div><dt><span class="ln"><span>Grasse</span></span></dt><dd><span class="ln"><span>Distilled in batches of 600 bottles</span></span></dd></div>
+            <div><dt><span class="ln"><span>Glass</span></span></dt><dd><span class="ln"><span>Walls eight millimetres thick, polished by hand</span></span></dd></div>
+            <div><dt><span class="ln"><span>Stopper</span></span></dt><dd><span class="ln"><span>A frosted cloud, and no two are quite alike</span></span></dd></div>
+            <div><dt><span class="ln"><span>Refill</span></span></dt><dd><span class="ln"><span>Bring the bottle back. Keep it for life.</span></span></dd></div>
           </dl>
         </div>
       </div>
     </section>
 
-    <section class="ch final" id="own" style="--h: 130vh">
+    <section class="ch final" id="own" style="--h: 170vh">
       <div class="stage">
         <p class="big top-center"><span class="ln"><span>Rise above.</span></span></p>
         <div class="buy">
@@ -88,7 +90,7 @@
     <div class="note"><b>Heart</b><span>Iris, rain-soaked musk</span></div>
     <div class="note"><b>Base</b><span>Cashmere wood, ambrette</span></div>
   </div>
-  <div class="cursor" aria-hidden="true"><span>Pop</span></div>
+  <div class="cursor" aria-hidden="true"><span></span></div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
