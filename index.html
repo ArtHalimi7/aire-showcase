@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIRE — Cumulus Nº 01</title>
+  <meta name="description" content="Cumulus Nº 01, an eau de parfum that weighs nothing. A concept by Art Halimi Studio." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2213%22 fill=%22none%22 stroke=%22%231d2027%22 stroke-width=%221.6%22/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,100&family=Geist:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <canvas class="gl" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="veil" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top" data-scroll="0">AIRE</a>
+    <nav class="links">
+      <a href="#notes" data-scroll="#notes">Notes</a>
+      <a href="#craft" data-scroll="#craft">Craft</a>
+      <a class="pill" href="#own" data-scroll="#own">Pre-order</a>
+    </nav>
+  </header>
+
+  <main id="story">
+    <section class="ch hero" id="top" style="--h: 100vh">
+      <div class="stage">
+        <h1 class="sr-only">AIRE Cumulus Nº 01, eau de parfum</h1>
+        <p class="hero-meta">Cumulus Nº 01<br /><span>Eau de parfum, 50 ml</span></p>
+        <p class="hero-line">A fragrance that<br />weighs nothing.</p>
+        <p class="cue"><span>Scroll to rise</span><i></i></p>
+      </div>
+    </section>
+
+    <section class="ch rise" style="--h: 260vh">
+      <div class="stage">
+        <p class="big top-left"><span class="ln"><span>Above the weather,</span></span></p>
+        <p class="big bottom-right"><span class="ln"><span>the air goes quiet.</span></span></p>
+      </div>
+    </section>
+
+    <section class="ch idea" style="--h: 170vh">
+      <div class="stage">
+        <div class="col-left">
+          <p class="big"><span class="ln"><span>We spent 312 days</span></span><span class="ln"><span>trying to bottle it.</span></span></p>
+          <p class="body"><span class="ln"><span>Forty-one drafts later, Cumulus smells like the first</span></span><span class="ln"><span>breath after a long climb. Cold, clean, faintly sweet.</span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ch notes" id="notes" style="--h: 240vh">
+      <div class="stage">
+        <p class="big bottom-center"><span class="ln"><span>Three notes. No weight.</span></span></p>
+      </div>
+    </section>
+
+    <section class="ch craft" id="craft" style="--h: 170vh">
+      <div class="stage">
+        <div class="col-right">
+          <p class="big"><span class="ln"><span>Made slowly.</span></span></p>
+          <dl class="stats">
+            <div><dt><span class="ln"><span>4 mm</span></span></dt><dd><span class="ln"><span>Recycled glass walls, polished by hand</span></span></dd></div>
+            <div><dt><span class="ln"><span>Refill</span></span></dt><dd><span class="ln"><span>The bottle is made to be kept for life</span></span></dd></div>
+            <div><dt><span class="ln"><span>Grasse</span></span></dt><dd><span class="ln"><span>Distilled in batches of 600 bottles</span></span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="ch final" id="own" style="--h: 130vh">
+      <div class="stage">
+        <p class="big top-center"><span class="ln"><span>Rise above.</span></span></p>
+        <div class="buy">
+          <p class="product"><span class="ln"><span>Cumulus Nº 01, 50 ml</span></span><span class="ln"><span class="price">€165</span></span></p>
+          <button class="cta" type="button"><span class="cta-a">Pre-order</span><span class="cta-b">You're on the list</span></button>
+          <p class="ships">Ships March 2027</p>
+        </div>
+        <footer class="credit">AIRE is a concept by <a href="https://arthalimi.com" target="_blank" rel="noopener">Art Halimi Studio</a></footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="notes-labels" aria-hidden="true">
+    <div class="note"><b>Top</b><span>Bergamot, white pear</span></div>
+    <div class="note"><b>Heart</b><span>Iris, rain-soaked musk</span></div>
+    <div class="note"><b>Base</b><span>Cashmere wood, ambrette</span></div>
+  </div>
+  <div class="cursor" aria-hidden="true"><span>Pop</span></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
